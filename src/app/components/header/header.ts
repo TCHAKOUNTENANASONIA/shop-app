@@ -1,11 +1,20 @@
-   import { Component } from '@angular/core';
+   import { CommonModule } from '@angular/common';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
-  logo = 'assets/images/products/logo-img.png'
+  logo = input<string>('assets/images/products/logo-img.png');
+  favoritesCount = input(0);
+  menuOpen = false;
+
+  toggleMenu(){
+    this.menuOpen = !this.menuOpen;
+    console.log('État du menu mobile :', this.menuOpen);
+  }
+  
 }

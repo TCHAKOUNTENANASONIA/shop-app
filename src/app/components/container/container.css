@@ -1,20 +1,27 @@
 
-.container {
+.ontainer {
     min-height: calc(100vh - 70px - 100px); /* 100vh - header - footer */
     padding: 24px 32px;
     box-sizing: border-box;
 }
+.ontainer h1{
+    text-align: center;
+}
+.ontainer p{
+    text-align: center;
+    color: rgb(89, 112, 34);
+}
 
 
 @media (max-width: 1024px) {
-    .container {
+    .ontainer {
         padding: 20px 20px;
     }
 }
 
 
 @media (max-width: 768px) {
-    .container {
+    .ontainer {
         padding: 16px 12px;
     }
 }

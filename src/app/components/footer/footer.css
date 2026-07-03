@@ -1,10 +1,80 @@
-footer{
-    background-color: #d4248b;
-    height: 100px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    color: white;
+footer {
+    background-color:#cc9cb9; /* Fond bleu nuit uni sur tout le footer */
+    color: #ffffff;
+    padding: 50px 40px 20px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 3px solid #b9195c; /* Ligne rose signature tout en haut */
+    margin-top: 50px;
+}
 
+/* Alignement horizontal des 3 colonnes sur ordinateur */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style de chaque colonne (sans bordure, sans fond blanc) */
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h4 {
+    color: black; /* Titres en rose pour contraster sur le bleu */
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-column p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 6px 0;
+    opacity: 0.9; /* Rend le texte légèrement plus doux à l'oeil */
+}
+
+/* Style spécifique pour mettre en valeur le slogan */
+.footer-column .slogan {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Ligne de séparation du bas */
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: black;
+    opacity: 0.6;
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    footer {
+        padding: 35px 20px 15px 20px;
+    }
+
+  
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: 
+    }
+
+    .footer-column {
+        width: 100%;
+    }
 }

@@ -1,11 +1,10 @@
-
-header {
+header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
     height: 70px;
-    background: #d4248b;
+    background: #cc79ab;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
@@ -13,14 +12,20 @@ header {
     box-sizing: border-box;
 }
 
+
+
 .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
     color: #fff;
 }
 
 .logo img {
-    height: 50px;
+    height: 70px;
     width: auto;
     display: block;
+    object-fit: contain;
 }
 
 .menu ul {
@@ -83,23 +88,69 @@ header {
 @media (max-width: 768px) {
     header {
         padding: 0 16px;
-        position: relative;
-        flex-wrap: wrap;
-        height: auto;
-        min-height: 60px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        height: 60px;
+        flex-wrap: nowrap;
+        position: sticky;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
+        order: 3;
+    }
+
+    .favorites{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+    }
+
+
+    .menu {
+        position: fixed;    
+        top: 60px;             
+        left: 0;
+        width: 100%;
+        background: #d4248b;
+        z-index: 98;
+
+        /* Caché par défaut */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .menu.open {
+        max-height: 300px;
     }
 
     .menu ul {
         flex-direction: column;
-        gap: 12px;
+        gap: 0;
         width: 100%;
-        padding: 10px 0 6px;
+        padding: 10px 0;
         align-items: center;
     }
 
-    .menu ul li a {
-        font-size: 14px;
+    .menu ul li {
+        width: 100%;
+        text-align: center;
     }
+
+    .menu ul li a {
+        display: block;
+        padding: 14px 0;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .menu ul li:last-child a {
+        border-bottom: none;
+    }
+
+    
+
 }

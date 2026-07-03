@@ -1,0 +1,30 @@
+<div class="modal-product-view-overlay"></div> 
+  
+<div class="modal-product-view-container"> 
+  
+  <div class="modal-product-view-image"> 
+    <img 
+      [src]="product()?.imageUrl" 
+      [alt]="product()?.name" 
+    > 
+  </div> 
+  
+    <div class="modal-product-view-details"> 
+        <h2>{{ product()?.name }}</h2> 
+        <p>{{ product()?.description }}</p> 
+        <h4>{{ product()?.soldPrice }} FCFA</h4> 
+        <h4 class="regular"> 
+            {{ product()?.regularPrice }} FCFA 
+        </h4> 
+        <p>
+            Créé le {{ product()?.createAt | date:'dd/MM/yyyy' }} 
+        </p> 
+    </div> 
+    <button class="btn btn-favorite" (click)="onAddToFavorites()"> 
+      ❤ Ajouter aux favoris 
+    </button>  
+
+    <button class="btn btn-close" (click)="onCloseClick()"> 
+        Fermer 
+    </button> 
+</div>

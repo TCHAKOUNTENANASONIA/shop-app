@@ -1,3 +1,13 @@
-<div class="container">
+<div class="ontainer">
+    <h1>BIENVENUE CHEZ SONY FASHION</h1>
+    <p>Mode traditionnelle & artisanat 100% Camerounais </p>
     <app-product-list></app-product-list>
+    
 </div>
+
+<div class="container"> 
+  <app-product-list 
+    (favoriteAdded)="onFavoriteAdded($event)" 
+  /> 
+</div>
+

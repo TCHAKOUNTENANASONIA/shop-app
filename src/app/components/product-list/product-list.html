@@ -1,7 +1,17 @@
+
 <div class="productList">
-    @for (product of products; track product.id){
-        <app-product-item [product]="product">
+    @for (product of products(); track product.id){
+        <app-product-item
+            [product]="product"
+            (displayProductViewModal)="onDisplayProductViewModal($event)">
         </app-product-item>
-        
     }
 </div>
+
+@if (isDisplayModal() && modalProduct()){
+    <app-modal-product-view
+        [product]="modalProduct()!"
+        (close)="onCloseModal()">
+        (favoriteAdded)="onFavoriteAdded($event)"> 
+    </app-modal-product-view>
+}
