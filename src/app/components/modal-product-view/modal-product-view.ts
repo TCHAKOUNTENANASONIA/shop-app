@@ -1,6 +1,7 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, inject } from '@angular/core';
 import { Product } from '../../models/product';
 import {DatePipe} from '@angular/common';
+import { CartService } from '../../services/favoris';
 
 @Component({
   selector: 'app-modal-product-view',
@@ -17,6 +18,7 @@ export class ModalProductView {
 
   favoriteAdded = output<Product>();
 
+  private cartService = inject(CartService);
   onCloseClick(){
     this.close.emit();
   }
@@ -24,7 +26,7 @@ export class ModalProductView {
   onAddToFavorites() { 
     const p = this.product(); 
     if (p) { 
-      this.favoriteAdded.emit(p); 
+      this.cartService.addFavorite(p) 
     } 
   } 
 }

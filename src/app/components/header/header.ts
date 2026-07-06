@@ -1,5 +1,6 @@
    import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, inject } from '@angular/core';
+import { CartService } from '../../services/favoris';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,16 @@ import { Component, input } from '@angular/core';
 })
 export class Header {
   logo = input<string>('assets/images/products/logo-img.png');
-  favoritesCount = input(0);
+  
+  private cartService = inject(CartService);
+  favoritesCount = this.cartService.favoritesCount;
+
   menuOpen = false;
+
 
   toggleMenu(){
     this.menuOpen = !this.menuOpen;
-    console.log('État du menu mobile :', this.menuOpen);
+    
   }
   
 }

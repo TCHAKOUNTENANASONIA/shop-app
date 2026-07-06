@@ -11,10 +11,6 @@ import { Footer } from './components/footer/footer';
   styleUrl: './app.css'
 })
 export class App {
-  favoritesCount = signal(0); 
   
-  onFavoriteAdded(product: Product) { 
-    this.favoritesCount.update((count: number) => count + 1);  
-    console.log('Total favoris :', this.favoritesCount()); 
-  } 
+   
 }
