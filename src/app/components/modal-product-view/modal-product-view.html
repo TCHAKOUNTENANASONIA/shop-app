@@ -12,10 +12,15 @@
     <div class="modal-product-view-details"> 
         <h2>{{ product()?.name }}</h2> 
         <p>{{ product()?.description }}</p> 
-        <h4>{{ product()?.soldPrice }} FCFA</h4> 
-        <h4 class="regular"> 
-            {{ product()?.regularPrice }} FCFA 
-        </h4> 
+        
+        <!-- 🌟 AJOUT : Un conteneur pour aligner les deux prix -->
+        <div class="modal-prices">
+            <h4 class="sold">{{ product()?.soldPrice }} FCFA</h4> 
+            <h4 class="regular"> 
+                {{ product()?.regularPrice }} FCFA 
+            </h4> 
+        </div>
+
         <p>
             Créé le {{ product()?.createAt | date:'dd/MM/yyyy' }} 
         </p> 

@@ -48,6 +48,31 @@
   gap: 8px; 
 } 
 
+/* 🌟 NOUVEAU : Alignement des prix côte à côte (Desktop) */
+.modal-prices {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 5px 0;
+}
+
+.modal-prices .sold {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #151d5f; /* Bleu nuit */
+}
+
+/* 🌟 CORRECTION : Le style précis pour barrer le prix régulier en rouge */
+.modal-product-view-details .regular { 
+  margin: 0;
+  font-size: 16px;
+  color: #dc3545; /* Rouge promotion */
+  text-decoration: line-through; /* Barre le texte */
+  font-weight: normal;
+  opacity: 0.85;
+}
+
 /* 🌟 NOUVEAU : On gère les boutons pour qu'ils soient propres sur ordinateur */
 .btn-favorite {
   background-color: #d4248b;
@@ -68,9 +93,6 @@
   cursor: pointer;
 }
 
-/* ==========================================================================
-   📱 ADAPTATION POUR ÉCRANS MOBILES (Smartphones)
-   ========================================================================== */
 /* ==========================================================================
    📱 ADAPTATION TOTALE POUR ÉCRANS MOBILES (Smartphones)
    ========================================================================== */
@@ -115,6 +137,11 @@
     flex: none !important;
     text-align: center !important;
     gap: 4px !important;
+  }
+
+  /* 🌟 NOUVEAU : On centre les deux prix uniquement sur l'écran mobile */
+  .modal-prices {
+    justify-content: center !important;
   }
 
   /* 6. Les boutons s'empilent proprement et prennent toute la largeur */
